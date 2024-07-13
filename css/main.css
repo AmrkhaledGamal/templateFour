@@ -636,6 +636,142 @@ header .fa-bars {
   opacity: var(--mainOpacityText);
 }
 
+.form-section {
+  position: relative;
+  padding-block: var(--mainPadding);
+  background-image: url(../image/3d.png);
+  background-size: cover;
+}
+
+.form-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../image/3d\ layer.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.form-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .form-section .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.form-section .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-basis: 50%;
+}
+
+.form-section .content .circle {
+  content: "";
+  position: relative;
+  width: 87px;
+  height: 87px;
+  border-radius: 100%;
+  background-color: #47474e;
+  margin-bottom: 45px;
+}
+
+.form-section .content .circle i {
+  position: relative;
+  color: #68d585;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(180deg);
+  font-size: 35px;
+}
+
+.form-section .content h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -1.2000000476837158px;
+  text-align: left;
+  color: var(--mainText);
+  margin-bottom: 20px;
+}
+
+.form-section .content p {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.20000000298023224px;
+  text-align: left;
+  color: var(--mainText);
+  opacity: var(--mainOpacityText);
+}
+
+.form-section .content-form {
+  background-color: var(--mainText);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.form-section .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-section .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-section .form-group label {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: var(--mainColorText);
+}
+
+.form-section .form-group .input {
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #e7e9ed;
+}
+
+.form-section .form-group .input::placeholder,
+.form-section .form-group select {
+  padding-left: 18px;
+}
+
+.form-section .form-container button {
+  width: 300px;
+  height: 59px;
+  background-color: var(--mainButton);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--mainText);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 20.55px;
+  letter-spacing: -0.5px;
+}
+
 @keyframes arrow {
   100% {
     transform: translateX(8px);
