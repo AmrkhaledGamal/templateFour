@@ -356,7 +356,7 @@ header .fa-bars {
 }
 
 .Skills {
-  padding-block: calc(var(--mainPadding) + 20px);
+  padding-top: calc(var(--mainPadding) + 20px);
   background-color: #f4f7fa;
 }
 
@@ -414,6 +414,7 @@ header .fa-bars {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .Skills .image::after {
@@ -427,6 +428,7 @@ header .fa-bars {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .Skills .image img {
@@ -527,12 +529,14 @@ header .fa-bars {
   line-height: 15.72px;
   letter-spacing: 0.625px;
 }
+
 .Skills .info span:nth-child(2) {
   font-size: 17px;
   font-weight: 300;
   line-height: 29px;
   letter-spacing: -0.20000000298023224px;
 }
+
 .Skills .info a {
   font-size: 17px;
   font-weight: 300;
@@ -552,6 +556,84 @@ header .fa-bars {
   .Skills .info a {
     font-size: 12px;
   }
+}
+
+.information {
+  padding-block: calc(var(--mainPadding) + 20px);
+}
+
+.information .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .information .container {
+    gap: 35px;
+  }
+}
+
+.information .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--mainTransition);
+}
+
+@media (max-width: 768px) {
+  .information .box {
+    /* box-shadow: 5px 6px 8px 1px #eee; */
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    padding: 20px;
+  }
+  .information .box:hover {
+    transform: translateY(-8px);
+  }
+}
+
+.information .box > img {
+  margin-bottom: 50px;
+}
+
+.information .box p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.information .box .more {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.information .box .more .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.information .box .more .text span:first-child {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: -0.20000000298023224px;
+  text-align: left;
+  color: var(--mainColorText);
+}
+
+.information .box .more .text span:last-child {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: var(--mainColorText);
+  opacity: var(--mainOpacityText);
 }
 
 @keyframes arrow {
