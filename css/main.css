@@ -19,6 +19,8 @@ body {
   --mainPadding: 80px;
   --mainOpacityText: 70%;
   --mainTransition: 0.4s;
+  --mainRadius: 10px;
+  --mainBorder: 1px solid #e7e9ed;
 }
 
 ul {
@@ -111,7 +113,7 @@ header {
 header button {
   width: 150px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: var(--mainRadius);
   background-color: var(--mainButton);
   color: var(--mainText);
   cursor: pointer;
@@ -231,7 +233,7 @@ header .fa-bars {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 10px;
+  border-radius: var(--mainRadius);
   cursor: pointer;
   color: var(--mainText);
   font-size: 17px;
@@ -249,7 +251,7 @@ header .fa-bars {
 
 .statistics {
   padding-block: var(--mainPadding);
-  border-bottom: 1px solid #e7e9ed;
+  border-bottom: var(--mainBorder);
 }
 
 .statistics .container {
@@ -319,8 +321,8 @@ header .fa-bars {
 }
 
 .Services .box {
-  border: 1px solid #e7e9ed;
-  border-radius: 10px;
+  border: var(--mainBorder);
+  border-radius: var(--mainRadius);
   box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
   transition: var(--mainTransition);
 }
@@ -638,7 +640,7 @@ header .fa-bars {
 
 .form-section {
   position: relative;
-  padding-block: var(--mainPadding);
+  padding-block: calc(var(--mainPadding) + 40px);
   background-image: url(../image/3d.png);
   background-size: cover;
 }
@@ -718,7 +720,7 @@ header .fa-bars {
 .form-section .content-form {
   background-color: var(--mainText);
   padding: 25px;
-  border-radius: 10px;
+  border-radius: var(--mainRadius);
 }
 
 .form-section .form-container {
@@ -746,14 +748,19 @@ header .fa-bars {
 .form-section .form-group .input {
   width: 300px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: var(--mainRadius);
   outline: none;
-  border: 1px solid #e7e9ed;
+  border: var(--mainBorder);
 }
 
-.form-section .form-group .input::placeholder,
+.form-section .form-group .input,
 .form-section .form-group select {
   padding-left: 18px;
+}
+
+.form-section .form-group input:focus {
+  outline: 1px solid var(--mainButton);
+  caret-color: var(--mainButton);
 }
 
 .form-section .form-container button {
@@ -763,13 +770,191 @@ header .fa-bars {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 10px;
+  border-radius: var(--mainRadius);
   cursor: pointer;
   color: var(--mainText);
   font-size: 17px;
   font-weight: 700;
   line-height: 20.55px;
   letter-spacing: -0.5px;
+}
+
+.Subscribe {
+  padding-block: var(--mainPadding);
+  border-bottom: var(--mainBorder);
+}
+
+.Subscribe .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 120px;
+}
+
+@media (max-width: 991px) {
+  .Subscribe .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.Subscribe .container h2 {
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: -1.2000000476837158px;
+  text-align: left;
+  color: var(--mainColorText);
+}
+
+.Subscribe .container form {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .Subscribe .container form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.Subscribe .container form [type="email"] {
+  width: 290px;
+  height: 59px;
+  border-radius: var(--mainRadius);
+  border: var(--mainBorder);
+  outline: none;
+  color: var(--mainButton);
+}
+
+.Subscribe .container input[type="email"]:focus {
+  outline: 1px solid var(--mainButton);
+  caret-color: var(--mainButton);
+}
+
+.Subscribe .container input[type="email"] {
+  padding-left: 18px;
+}
+
+.Subscribe .container form button {
+  width: 170px;
+  height: 59px;
+  background-color: var(--mainButton);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: var(--mainRadius);
+  cursor: pointer;
+  color: var(--mainText);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.6000000238418579px;
+}
+
+footer {
+  padding-top: calc(var(--mainPadding) + 40px);
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+footer .container .info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 45px;
+}
+
+footer .info .box {
+  width: 144px;
+}
+
+footer .info .box ul li {
+  text-align: left;
+}
+
+footer .info .box ul li:first-child {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.10000000149011612px;
+  margin-bottom: 25px;
+  color: var(--mainColorText);
+  opacity: var(--mainOpacityText);
+}
+
+footer .info .box ul li:not(:first-child) {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.20000000298023224px;
+  color: var(--mainColorText);
+  cursor: pointer;
+}
+
+footer .info .contact-us ul li:not(:first-child) {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.20000000298023224px;
+  color: var(--mainButton);
+}
+
+footer .copyRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 35px;
+  /* margin-top: 100px; */
+  border-top: var(--mainBorder);
+}
+
+@media (max-width: 768px) {
+  footer .copyRight {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+footer .copyRight .text span {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.10000000149011612px;
+  color: var(--mainColorText);
+}
+
+footer .copyRight .text i {
+  color: #68d585;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+footer .copyRight .icon {
+  display: flex;
+  gap: 30px;
+  font-size: 19px;
+  color: var(--mainColorText);
+}
+
+footer .copyRight .icon i {
+  opacity: 40%;
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+footer .copyRight .icon i:hover {
+  transform: translateY(-6px);
+}
+
+footer .copyRight .icon i:nth-child(2) {
+  color: var(--mainButton);
+  opacity: unset;
 }
 
 @keyframes arrow {
