@@ -143,13 +143,14 @@ header .fa-bars {
 @media (max-width: 768px) {
   header .leftHead .fa-bars:hover + ul {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     position: absolute;
     width: 100%;
     left: 0px;
     top: 66px;
     background-color: #161c2d;
-    padding: 10px 15px;
+    padding-block: 10px;
   }
 }
 
