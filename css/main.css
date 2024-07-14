@@ -170,7 +170,7 @@ header .fa-bars {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../image/Layer.png") no-repeat;
+  background: url("../image/Layer.png");
   background-size: cover;
 }
 
