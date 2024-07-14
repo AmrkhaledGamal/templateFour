@@ -141,7 +141,7 @@ header .fa-bars {
 }
 
 @media (max-width: 768px) {
-  header .leftHead .fa-bars:hover + ul {
+  .leftHead .fa-bars:hover + ul {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -162,6 +162,7 @@ header .fa-bars {
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: -2;
 }
 
 .landing::after {
@@ -173,24 +174,23 @@ header .fa-bars {
   height: 100%;
   background-image: url("../image/Layer.png");
   background-size: cover;
+  z-index: -1;
 }
 
-.landing .content {
+/* .landing .content {
   position: relative;
   z-index: 1;
   width: 589px;
   height: 349px;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .landing .content {
     width: 350px;
   }
-}
+} */
 
 .landing .content h1 {
-  width: 589px;
-  height: 130px;
   color: var(--mainText);
   font-size: 60px;
   line-height: 65px;
@@ -200,8 +200,6 @@ header .fa-bars {
 
 @media (max-width: 768px) {
   .landing .content h1 {
-    width: 350px;
-    height: 110px;
     font-size: 40px;
     line-height: 50px;
     margin-bottom: 10px;
@@ -209,8 +207,6 @@ header .fa-bars {
 }
 
 .landing .content p {
-  width: 487px;
-  height: 96px;
   font-weight: 400;
   font-size: 19px;
   line-height: 32px;
@@ -221,7 +217,6 @@ header .fa-bars {
 
 @media (max-width: 768px) {
   .landing .content p {
-    width: 350px;
     font-size: 16px;
     margin-bottom: 20px;
   }
@@ -551,7 +546,8 @@ header .fa-bars {
 
 @media (max-width: 768px) {
   .Skills .info {
-    gap: 5px;
+    gap: 0px;
+    flex-direction: column;
   }
   .Skills .info span:nth-child(2) {
     font-size: 12px;
