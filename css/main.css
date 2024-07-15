@@ -143,14 +143,15 @@ header .fa-bars {
 @media (max-width: 768px) {
   .leftHead .fa-bars:hover + ul {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     position: absolute;
     width: 100%;
     left: 0px;
     top: 66px;
     background-color: #161c2d;
     padding-block: 10px;
+    align-items: center;
+    border: var(--mainBorder);
   }
 }
 
@@ -176,8 +177,10 @@ header .fa-bars {
 }
 
 .landing .content {
+  /* position relative because up to landing*/
   position: relative;
   z-index: 1;
+  /* margin-inline-end: 50%; */
 }
 
 .landing .content h1 {
@@ -268,8 +271,6 @@ header .fa-bars {
 }
 
 .Services {
-  /* padding-top: var(--mainPadding);
-  padding-bottom: var(--mainPadding); */
   padding-block: var(--mainPadding);
 }
 
@@ -336,6 +337,12 @@ header .fa-bars {
 
 .Services .box:hover i {
   animation: arrow 0.6s linear infinite;
+}
+
+@keyframes arrow {
+  100% {
+    transform: translateX(8px);
+  }
 }
 
 .Skills {
@@ -416,17 +423,6 @@ header .fa-bars {
   width: 100%;
   max-width: 100%;
 }
-
-/* .Skills .image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 98%;
-  background-color: #00000018;
-  overflow: hidden;
-} */
 
 .Skills .content .skill {
   display: flex;
@@ -833,6 +829,12 @@ footer .container {
   gap: 100px;
 }
 
+@media (max-width: 768px) {
+  footer .container {
+    align-items: center;
+  }
+}
+
 footer .container .info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
@@ -845,6 +847,12 @@ footer .info .box {
 
 footer .info .box ul li {
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  footer .info .box ul li {
+    text-align: center;
+  }
 }
 
 footer .info .box ul li:first-child {
@@ -921,10 +929,4 @@ footer .copyRight .icon i:hover {
 footer .copyRight .icon i:nth-child(2) {
   color: var(--mainButton);
   opacity: unset;
-}
-
-@keyframes arrow {
-  100% {
-    transform: translateX(8px);
-  }
 }
